@@ -5,6 +5,7 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+
 const Insert=()=>{
   const [input,setInput]=useState({});
 
@@ -14,12 +15,15 @@ const Insert=()=>{
     const {name,value}=e.target;
     setInput(values=>({...values, [name]:value}));
     console.log(input);
+
   }
 
   const handleSubmit=()=>{
     let api="http://localhost:8000/students/datasave";
     axios.post(api,input).then((res)=>{
+      console.log("Data Saved!");
       alert("Data Saved!!");
+      setInput("");
     })
   }
 

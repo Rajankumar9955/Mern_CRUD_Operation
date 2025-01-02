@@ -9,7 +9,7 @@ const bodyparser=require("body-parser");
 const cors=require("cors");
 const StuRoute=require("./Routes/StuRoutes")
 
-mongoose.connect("mongodb://127.0.0.1:27017/merncruddatabase").then((res)=>{
+mongoose.connect("mongodb://127.0.0.1:27017/crudoperation").then((res)=>{
     console.log("DataBase Connected!!!");
 })
 
@@ -21,6 +21,6 @@ app.use(bodyparser.json())
 
 app.use("/students",StuRoute);
 
-app.listen(app,()=>{
+app.listen(port,()=>{
     console.log(`server Listen on ${port} Port!!`);
 })
