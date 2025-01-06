@@ -6,21 +6,11 @@ import axios from "axios";
 
 import editImg from "./Images/edit.jpeg";
 import dltImg from "./Images/dlt.png"
-
+import { useNavigate } from "react-router-dom";
 const Update=()=>{
     const [myData,setMydata]=useState([]);
 
-
-
-
-
-
-
-
-
-
-     
-    
+    const navigate=useNavigate();
 
     const loadData=()=>{
         let api="http://localhost:8000/students/datadisplay";
@@ -49,7 +39,7 @@ const Update=()=>{
                     <td style={{border:"1px solid black"}}>{key.city}</td>
                     <td style={{border:"1px solid black"}}>{key.fees}</td>
                     <td style={{border:"1px solid black"}}>
-                                    <a href="#" ><img src={editImg} alt=""  id="update"/></a>
+                                    <a href="#" onClick={()=>{navigate(`/editdata/${key._id}`)}}><img src={editImg} alt=""  id="update"/></a>
                     </td>
                     <td style={{border:"1px solid black"}}>
                                <a href="#" onClick={()=>{delData(key._id)}}><img src={dltImg} alt=""  id="update"/></a>
