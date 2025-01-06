@@ -4,8 +4,8 @@ import Layout from "./Layout";
 import Home from "./Home";
 import Insert from "./insert";
 import Display from "./Display";
-import Delete from "./Delete";
 import EditData from "./EditData";
+import Update from "./Update";
 const App=()=>{
   return(
     <>
@@ -17,7 +17,7 @@ const App=()=>{
           <Route path="home" element={<Home/>}/>
           <Route path="insert" element={<Insert/>}/>
           <Route path="display" element={<Display/>}/>
-          <Route path="delete" element={<Delete/>}/>;
+          <Route path="update" element={<Update/>}/>;
           <Route path="editdata" element={<EditData/>}/>
 
           </Route>
