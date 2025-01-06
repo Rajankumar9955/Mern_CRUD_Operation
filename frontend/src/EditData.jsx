@@ -34,7 +34,7 @@ const EditData=()=>{
   const handleSubmit=()=>{
     let api="http://localhost:8000/students/editdatasave";
     axios.post(api,input).then((res)=>{
-      console.log("Data Saved!");
+      console.log(input);
       alert("Data Edited!!");
     })
   }
