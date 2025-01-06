@@ -16,7 +16,13 @@ const dataDisplay=async(req,res)=>{
            const mydata=await StuModel.find();
            res.send(mydata);
 }
+const DeleteData=async(req,res)=>{
+    const {id}=req.body;
+       const data=await StuModel.findByIdAndDelete(id);
+       res.send(data);
+}
 module.exports={
     StuDataSave,
-    dataDisplay
+    dataDisplay,
+    DeleteData
 }
