@@ -36,11 +36,18 @@ const EditDataSave=async(req,res)=>{
     res.send(UpdatedData)
 }
 
+const DataSearch=async(req,res)=>{
+    const {Name}=req.body;
+    const searchdata=await StuModel.find({"name":{$regex:Name,$options:'i'}});
+    console.log(searchdata)
+    res.send(searchdata)
+}
 
 module.exports={
     StuDataSave,
     dataDisplay,
     DeleteData,
     EditShowData,
-    EditDataSave
+    EditDataSave,
+    DataSearch
 }

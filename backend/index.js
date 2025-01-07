@@ -3,13 +3,15 @@
 
 const express=require("express");
 const app=express();
-const port=8000;
+
 const mongoose=require("mongoose");
 const bodyparser=require("body-parser");
 const cors=require("cors");
+require("dotenv").config();
 const StuRoute=require("./Routes/StuRoutes")
-
-mongoose.connect("mongodb://127.0.0.1:27017/crudoperation").then((res)=>{
+const DataBase=process.env.DATABASE
+const port=process.env.PORT
+mongoose.connect(DataBase).then((res)=>{
     console.log("DataBase Connected!!!");
 })
 
