@@ -25,23 +25,18 @@ const EditShowData=async(req,res)=>{
     const formdata=await StuModel.findById(id);
     res.send(formdata);
 }
-// const EditDataSave=async(req,res)=>{
-//     const {rollno,name,city,fees}=req.body;
-//         const UpdatedData=await StuModel.findByIdAndUpdate({
-//         rollno:rollno,
-//         name:name,
-//         city:city,
-//         fees:fees
-//     })
-//     res.send(UpdatedData)
-// }
+const EditDataSave=async(req,res)=>{
+    const {_id,rollno,name,city,fees}=req.body;
+        const UpdatedData=await StuModel.findByIdAndUpdate(_id,{
+        rollno:rollno,
+        name:name,
+        city:city,
+        fees:fees
+    })
+    res.send(UpdatedData)
+}
 
- const EditDataSave=async(req,res)=>{
-    const {id}=req.body;
-    const UpdatedData=await StuModel.findByIdAndUpdate(id);
-    console.log(UpdatedData);
-    res.send(UpdatedData);
- }
+
 module.exports={
     StuDataSave,
     dataDisplay,
