@@ -5,10 +5,13 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useParams } from "react-router-dom";
-
+import {useNavigate} from "react-router-dom"
 const EditData=()=>{
+    const navigate=useNavigate()
+
     const {id}=useParams();
-  const [input,setInput]=useState({});
+    
+    const [input,setInput]=useState({});
 
 
   const loadData=()=>{
@@ -36,6 +39,7 @@ const EditData=()=>{
     axios.post(api,input).then((res)=>{
       console.log(input);
       alert("Data Edited!!");
+      navigate("/update")
     })
   }
 
